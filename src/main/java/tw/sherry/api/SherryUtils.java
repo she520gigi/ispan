@@ -3,6 +3,8 @@ package tw.sherry.api;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+import tw.eeit58.*;
+
 public class SherryUtils {
 
 	public static String loadView(String view) throws Exception {
@@ -50,5 +52,9 @@ public class SherryUtils {
 			int intPages = (int)Double.parseDouble(pages);
 			int intPage = Integer.parseInt(page);
 			return intPage >= intPages ? intPage : intPage - 1;
+		}
+		
+		public static String encPasswd(String plainPasswd) {
+			return BCrypt.hashpw(plainPasswd, BCrypt.gensalt());
 		}
 }
