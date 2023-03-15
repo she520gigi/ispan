@@ -41,5 +41,14 @@ public class SherryUtils {
 			}catch(Exception e) {
 			 return "";
 			}
-	}
+		}	
+		public static int createScore() {
+			return (int)(Math.random()*101);
+		}
+	
+		public static int nextPage(String page, String pages) {
+			int intPages = (int)Double.parseDouble(pages);
+			int intPage = Integer.parseInt(page);
+			return intPage >= intPages ? intPage : intPage - 1;
+		}
 }
